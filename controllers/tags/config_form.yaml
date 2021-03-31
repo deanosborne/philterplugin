@@ -1,0 +1,10 @@
+name: Tags
+form: $/deanosborne/philter/models/tag/fields.yaml
+modelClass: deanosborne\Philter\Models\Tag
+defaultRedirect: deanosborne/philter/tags
+create:
+    redirect: 'deanosborne/philter/tags/update/:id'
+    redirectClose: deanosborne/philter/tags
+update:
+    redirect: deanosborne/philter/tags
+    redirectClose: deanosborne/philter/tags

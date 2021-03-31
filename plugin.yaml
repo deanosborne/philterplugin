@@ -1,0 +1,19 @@
+plugin:
+    name: 'deanosborne.philter::lang.plugin.name'
+    description: 'deanosborne.philter::lang.plugin.description'
+    author: 'dean osborne'
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item2:
+        label: Tag
+        url: deanosborne/philter/tags
+        icon: icon-tag
+    main-menu-item:
+        label: Image
+        url: deanosborne/philter/images
+        icon: icon-image
+    main-menu-item3:
+        label: Account
+        url: /account
+        icon: icon-users

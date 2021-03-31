@@ -1,0 +1,10 @@
+name: Images
+form: $/deanosborne/philter/models/image/fields.yaml
+modelClass: deanosborne\Philter\Models\Image
+defaultRedirect: deanosborne/philter/images
+create:
+    redirect: 'deanosborne/philter/images/update/:id'
+    redirectClose: deanosborne/philter/images
+update:
+    redirect: deanosborne/philter/images
+    redirectClose: deanosborne/philter/images

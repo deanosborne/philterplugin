@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table deanosborne_philter_image'
+    - builder_table_create_deanosborne_philter_image.php
+1.0.3:
+    - 'Created table deanosborne_philter_tag'
+    - builder_table_create_deanosborne_philter_tag.php
+1.0.4:
+    - 'Created table deanosborne_philter_image_tag'
+    - builder_table_create_deanosborne_philter_image_tag.php
