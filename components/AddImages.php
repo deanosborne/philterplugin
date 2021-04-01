@@ -21,14 +21,14 @@ class AddImages extends ComponentBase
     public function addImage()
     {
         $image = new ImageModel();
-        $image->name = Input::get('title');
+        $image->name = Input::get('name');
         $image->description = Input::get('description');
         $image->user = Auth::getUser();
         $image->image = Input::file('file');
         $image->filter = Input::get('filter');
         $image->save();
         $tags = Input::get('tags');
-        $tag_array = explode(', ', $tags); // like JS string.split(', ');
+        $tag_array = explode(', ', $tags); 
         $tag_models = [];
         foreach ($tag_array as $tag) {
             $tag = ucfirst(strtolower(trim($tag)));
@@ -37,7 +37,6 @@ class AddImages extends ComponentBase
         $image->tags()->attach($tag_models);
         $image->save();
         Flash::success('Your image has been uploaded');
-
         return Redirect::back();
     }
 }

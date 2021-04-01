@@ -6,6 +6,7 @@ use deanosborne\Philter\Models\Image as ImageModel;
 
 class UserImages extends ComponentBase
 {
+    public $images;
     public function componentDetails()
     {
         return [

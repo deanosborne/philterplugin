@@ -26,4 +26,15 @@ class Tag extends Model
      */
     public $rules = [
     ];
+
+    public function scopeGetTag($query, $new_tag)
+    {
+        $tag = Tag::where('tag', '=', $new_tag)->first();
+        if ($tag === null) {
+           $tag = new Tag();
+           $tag->tag = $new_tag;
+           $tag->save();
+        }
+        return $tag->id;
+    }
 }

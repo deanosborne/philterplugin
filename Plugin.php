@@ -10,7 +10,7 @@ class Plugin extends PluginBase
             'deanosborne\Philter\components\RecentImages' => 'RecentImages',
             'deanosborne\Philter\components\UserImages' => 'UserImages',
             'deanosborne\Philter\Components\AddImages' => 'AddImages',
-            'deanosborne\Philter\Components\DeleteImage' => 'DeleteImage',
+            'deanosborne\Philter\Components\DeleteImage' => 'DeleteImage'
         ];
     }
 

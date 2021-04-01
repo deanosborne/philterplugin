@@ -25,7 +25,7 @@
             </picture>
             <h5>{{ image.name }}</h5>
             <p>{{ image.description }}</p>
-            <p><a href="/image?delete_image={{ image.id }}" class="btn btn-primary btn-sm">Delete</a></p>
+            <a href="/image?delete_image={{ image.id }}" class="btn">Delete</a></p>
         </div>
         {% endfor %}
         <div class="clearfix"></div>

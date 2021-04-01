@@ -16,4 +16,10 @@ class Images extends Controller
         parent::__construct();
         BackendMenu::setContext('deanosborne.Philter', 'main-menu-item');
     }
+
+    public function listExtendQuery($query)
+    {
+        $query
+            ->with('image','image');
+    }    
 }

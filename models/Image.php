@@ -49,16 +49,16 @@ class Image extends Model
 
     public function scopeLatest($query)
     {
-        return $query->take(8)->orderBy('id', 'asc');
+        return $query->with('image')->take(8)->orderBy('id', 'asc');
     }
 
     public function scopeUsersImages($query, $user_id)
     {
-        return $query->where('user_id', $user_id)->orderBy('id', 'asc');
+        return $query->with('image')->where('user_id', $user_id)->orderBy('id', 'asc');
     }
 
     public function scopeOthersImages($query, $user_id)
     {
-        return $query->where('user_id', '!=', $user_id);
+         return $query->with('image')->where('user_id', '!=', $user_id)->orderBy('id', 'asc');
     }
 }
