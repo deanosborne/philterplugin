@@ -218,7 +218,7 @@ class Api
 			 * Only this user should be 
 			 * updating this image
 			 */
-			$image = ImageModel::usersImages($user->id)->find($image_id);
+			$image = ImageModel::userImages($user->id)->find($image_id);
 			if ($image) {
 				$image->delete();
 				return $this->sendResponse('Your image has been successfully deleted');
@@ -271,7 +271,7 @@ class Api
     {
 		$user = $this->checkToken();
 		if (is_object($user)) {
-			$data = ImageModel::usersImages($user->id)->get();
+			$data = ImageModel::userImages($user->id)->get();
 			return $this->sendResponse($data);		
 		}
 		else {

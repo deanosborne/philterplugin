@@ -5,6 +5,14 @@
  */
 $api = new deanosborne\Philter\Classes\Api();
 
+Route::options('/{any}', function() {
+    $headers = [
+        'Access-Control-Allow-Methods'=> 'POST, GET, OPTIONS, PUT, DELETE',
+        'Access-Control-Allow-Headers'=> 'X-Requested-With, Content-Type, X-Auth-Token, Origin, Authorization'
+    ];
+    return \Response::make('You are connected to the API', 200, $headers);
+})->where('any', '.*');
+
 Route::options('api/v1/{all}', function() {
     if (Request::getMethod() == "OPTIONS") {
         echo('You are connected to the API');
@@ -19,50 +27,42 @@ Route::options('api/v1/{any}/{all}', function() {
     }
 });
 
-Route::post('api/v1/login', function() {
-    return $api->login();
-});
-
-Route::post('api/v1/users/', function() use ($api) {
-    return $api->registerUser();
-});
-
-Route::get('api/v1/logout', function() use ($api) {
-    return $api->logout();
-});
-
-Route::get('api/v1/users/', function() use ($api) {
-    return $api->getUser();
-});
-
-Route::post('api/v1/users/update', function() use ($api) {
-    return $api->updateUser();
-});
-
-Route::post('api/v1/users/delete', function() use ($api) {
-    return $api->deleteUser();
-});
-
-Route::get('api/v1/images/', function() use ($api) {
+Route::get('api/v1/images', function() use ($api) {
     return $api->getImages();
 });
 
-Route::get('api/v1/images/{image_id}/', function($image_id) use ($api) {
-    return $api->getImage($image_id);
+Route::post('api/v1/login', function() use ($api) {
+    return $api->login();
+});
+
+Route::post('api/v1/logout', function() use ($api) {
+    return $api->logout();
+});
+
+Route::post('api/v1/registerUser/', function() use ($api) {
+    return $api->registerUser();
 });
 
 Route::get('api/v1/images/user', function() use ($api) {
     return $api->getUserImages();
 });
 
-Route::post('api/v1/images/', function() use ($api) {
+Route::get('api/v1/users', function() use ($api) {
+    return $api->getUser();
+});
+Route::post('api/v1/addImage', function() use ($api) {
     return $api->addImage();
 });
 
-Route::post('api/v1/images/update/{image_id}/', function($image_id) use ($api) {
-    return $api->updateImage($image_id);
+Route::get('api/v1/images/latest', function() use ($api) {
+    return $api->getLatestImages();
 });
 
-Route::get('api/v1/users/delete/{image_id}/', function($image_id) use ($api) {
-    return $api->deleteImage($image_id);
+// from module5
+Route::delete('api/v1/users/delete/{image_id}', function($image_id) use ($api) {
+   return $api->deleteImage($image_id);
+});
+
+Route::get('api/v1/images/others', function() use ($api) {
+    return $api->getOthersImages();
 });

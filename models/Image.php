@@ -52,7 +52,7 @@ class Image extends Model
         return $query->with('image')->take(8)->orderBy('id', 'asc');
     }
 
-    public function scopeUsersImages($query, $user_id)
+    public function scopeUserImages($query, $user_id)
     {
         return $query->with('image')->where('user_id', $user_id)->orderBy('id', 'asc');
     }
